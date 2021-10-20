@@ -2,20 +2,19 @@
     "variables": [
         {
             "name": "defaultLocation",
-            "value": "WestEurope"
+            "value": "usgovvirginia"
         },
         {
             "name": "resourceGroupName",
             "value": "validation-rg"
         },
-
         {
             "name": "componentTemplateSpecRGName",
             "value": "artifacts-rg"
         },
         {
             "name": "componentTemplateSpecRGLocation",
-            "value": "WestEurope"
+            "value": "usgovvirginia"
         },
         {
             "name": "componentTemplateSpecDescription",

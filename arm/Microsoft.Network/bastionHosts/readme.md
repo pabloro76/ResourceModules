@@ -4,34 +4,34 @@ This module deploys an Azure Bastion.
 
 ## Resource Types
 
-|Resource Type|Api Version|
-|:--|:--|
-|`Microsoft.Resources/deployments`|2018-02-01|
-|`Microsoft.Network/publicIPAddresses`|2021-02-01|
-|`Microsoft.Network/bastionHosts`|2021-02-01|
-|`Microsoft.Authorization/locks`|2016-09-01|
-|`Microsoft.Insights/diagnosticSettings`|2017-05-01-preview|
-|`Microsoft.Network/bastionHosts/providers/roleAssignments`	|2018-09-01-preview|
+| Resource Type                                              | Api Version        |
+| :--------------------------------------------------------- | :----------------- |
+| `Microsoft.Resources/deployments`                          | 2018-02-01         |
+| `Microsoft.Network/publicIPAddresses`                      | 2021-02-01         |
+| `Microsoft.Network/bastionHosts`                           | 2021-02-01         |
+| `Microsoft.Authorization/locks`                            | 2016-09-01         |
+| `Microsoft.Insights/diagnosticSettings`                    | 2017-05-01-preview |
+| `Microsoft.Network/bastionHosts/providers/roleAssignments` | 2018-09-01-preview |
 
 ## Parameters
 
-| Parameter Name | Type | Description | DefaultValue | Possible values |
-| :-- | :-- | :-- | :-- | :-- |
-| `azureBastionName` | string | Required. Name of the Azure Bastion resource |  |  |
-| `azureBastionPipName` | string | Optional. Specifies the name of the Public IP used by Azure Bastion. If it's not provided, a '-pip' suffix will be appended to the Bastion's name. |  |  |
-| `cuaId` | string | Optional. Customer Usage Attribution id (GUID). This GUID must be previously registered |  |  |
-| `diagnosticLogsRetentionInDays` | int | Optional. Specifies the number of days that logs will be kept for; a value of 0 will retain data indefinitely. | 365 |  |
-| `diagnosticStorageAccountId` | string | Optional. Resource identifier of the Diagnostic Storage Account. |  |  |
-| `domainNameLabel` | string | Optional. DNS name of the Public IP resource. A region specific suffix will be appended to it, e.g.: your-DNS-name.westeurope.cloudapp.azure.com |  |  |
-| `eventHubAuthorizationRuleId` | string | Optional. Resource ID of the event hub authorization rule for the Event Hubs namespace in which the event hub should be created or streamed to. |  |  |
-| `eventHubName` | string | Optional. Name of the event hub within the namespace to which logs are streamed. Without this, an event hub is created for each log category. |  |  |
-| `location` | string | Optional. Location for all resources. | [resourceGroup().location] |  |
-| `lock` | string | Optional. Specify the type of lock. | 'NotSpecified' | 'CanNotDelete', 'NotSpecified', 'ReadOnly' |
-| `publicIPPrefixId` | string | Optional. Resource Id of the Public IP Prefix object. This is only needed if you want your Public IPs created in a PIP Prefix. |  |  |
-| `roleAssignments` | array | Optional. Array of role assignment objects that contain the 'roleDefinitionIdOrName' and 'principalId' to define RBAC role assignments on this resource. In the roleDefinitionIdOrName attribute, you can provide either the display name of the role definition, or its fully qualified ID in the following format: '/providers/Microsoft.Authorization/roleDefinitions/c2f4ef07-c644-48eb-af81-4b1b4947fb11' | System.Object[] |  |
-| `tags` | object | Optional. Tags of the resource. |  |  |
-| `vNetId` | string | Required. Shared services Virtual Network resource identifier |  |  |
-| `workspaceId` | string | Optional. Resource identifier of Log Analytics. |  |  |
+| Parameter Name                  | Type   | Description                                                                                                                                                                                                                                                                                                                                                                                                    | DefaultValue               | Possible values                            |
+| :------------------------------ | :----- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------------------------- | :----------------------------------------- |
+| `azureBastionName`              | string | Required. Name of the Azure Bastion resource                                                                                                                                                                                                                                                                                                                                                                   |                            |                                            |
+| `azureBastionPipName`           | string | Optional. Specifies the name of the Public IP used by Azure Bastion. If it's not provided, a '-pip' suffix will be appended to the Bastion's name.                                                                                                                                                                                                                                                             |                            |                                            |
+| `cuaId`                         | string | Optional. Customer Usage Attribution id (GUID). This GUID must be previously registered                                                                                                                                                                                                                                                                                                                        |                            |                                            |
+| `diagnosticLogsRetentionInDays` | int    | Optional. Specifies the number of days that logs will be kept for; a value of 0 will retain data indefinitely.                                                                                                                                                                                                                                                                                                 | 365                        |                                            |
+| `diagnosticStorageAccountId`    | string | Optional. Resource identifier of the Diagnostic Storage Account.                                                                                                                                                                                                                                                                                                                                               |                            |                                            |
+| `domainNameLabel`               | string | Optional. DNS name of the Public IP resource. A region specific suffix will be appended to it, e.g.: your-DNS-name.usgovvirginia.cloudapp.azure.com                                                                                                                                                                                                                                                            |                            |                                            |
+| `eventHubAuthorizationRuleId`   | string | Optional. Resource ID of the event hub authorization rule for the Event Hubs namespace in which the event hub should be created or streamed to.                                                                                                                                                                                                                                                                |                            |                                            |
+| `eventHubName`                  | string | Optional. Name of the event hub within the namespace to which logs are streamed. Without this, an event hub is created for each log category.                                                                                                                                                                                                                                                                  |                            |                                            |
+| `location`                      | string | Optional. Location for all resources.                                                                                                                                                                                                                                                                                                                                                                          | [resourceGroup().location] |                                            |
+| `lock`                          | string | Optional. Specify the type of lock.                                                                                                                                                                                                                                                                                                                                                                            | 'NotSpecified'             | 'CanNotDelete', 'NotSpecified', 'ReadOnly' |
+| `publicIPPrefixId`              | string | Optional. Resource Id of the Public IP Prefix object. This is only needed if you want your Public IPs created in a PIP Prefix.                                                                                                                                                                                                                                                                                 |                            |                                            |
+| `roleAssignments`               | array  | Optional. Array of role assignment objects that contain the 'roleDefinitionIdOrName' and 'principalId' to define RBAC role assignments on this resource. In the roleDefinitionIdOrName attribute, you can provide either the display name of the role definition, or its fully qualified ID in the following format: '/providers/Microsoft.Authorization/roleDefinitions/c2f4ef07-c644-48eb-af81-4b1b4947fb11' | System.Object[]            |                                            |
+| `tags`                          | object | Optional. Tags of the resource.                                                                                                                                                                                                                                                                                                                                                                                |                            |                                            |
+| `vNetId`                        | string | Required. Shared services Virtual Network resource identifier                                                                                                                                                                                                                                                                                                                                                  |                            |                                            |
+| `workspaceId`                   | string | Optional. Resource identifier of Log Analytics.                                                                                                                                                                                                                                                                                                                                                                |                            |                                            |
 
 ### Parameter Usage: `tags`
 
@@ -81,11 +81,11 @@ Tag names and tag values can be provided as needed. A tag can be left without a 
 
 ## Outputs
 
-| Output Name | Type | Description |
-| :-- | :-- | :-- |
-| `azureBastionName` | string | The Name of the Azure Bastion. |
+| Output Name                 | Type   | Description                                        |
+| :-------------------------- | :----- | :------------------------------------------------- |
+| `azureBastionName`          | string | The Name of the Azure Bastion.                     |
 | `azureBastionResourceGroup` | string | The Resource Group the Azure Bastion was deployed. |
-| `azureBastionResourceId` | string | The Resource Id of the Azure Bastion. |
+| `azureBastionResourceId`    | string | The Resource Id of the Azure Bastion.              |
 
 ## Considerations
 

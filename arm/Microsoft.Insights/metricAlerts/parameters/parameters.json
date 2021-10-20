@@ -29,7 +29,7 @@
             "value": "microsoft.compute/virtualmachines"
         },
         "targetResourceRegion": {
-            "value": "westeurope"
+            "value": "usgovvirginia"
         },
         "criterias": {
             "value": [
