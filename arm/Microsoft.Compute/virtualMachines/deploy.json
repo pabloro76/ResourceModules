@@ -4,8 +4,7 @@
     "parameters": {
         "vmNames": {
             "type": "array",
-            "defaultValue": [
-            ],
+            "defaultValue": [],
             "metadata": {
                 "description": "Optional. Name(s) of the virtual machine(s). If no explicit names are provided, VM name(s) will be generated based on the vmNamePrefix, vmNumberOfInstances and vmInitialNumber parameters."
             }
@@ -70,16 +69,14 @@
         },
         "imageReference": {
             "type": "object",
-            "defaultValue": {
-            },
+            "defaultValue": {},
             "metadata": {
                 "description": "Optional. OS image reference. In case of marketplace images, it's the combination of the publisher, offer, sku, version attributes. In case of custom images it's the resource ID of the custom image."
             }
         },
         "plan": {
             "type": "object",
-            "defaultValue": {
-            },
+            "defaultValue": {},
             "metadata": {
                 "description": "Optional. Specifies information about the marketplace image used to create the virtual machine. This element is only used for marketplace images. Before you can use a marketplace image from an API, you must enable the image for programmatic use."
             }
@@ -92,8 +89,7 @@
         },
         "dataDisks": {
             "type": "array",
-            "defaultValue": [
-            ],
+            "defaultValue": [],
             "metadata": {
                 "description": "Optional. Specifies the data disks."
             }
@@ -127,24 +123,21 @@
         },
         "windowsConfiguration": {
             "type": "object",
-            "defaultValue": {
-            },
+            "defaultValue": {},
             "metadata": {
                 "description": "Optional. Specifies Windows operating system settings on the virtual machine."
             }
         },
         "linuxConfiguration": {
             "type": "object",
-            "defaultValue": {
-            },
+            "defaultValue": {},
             "metadata": {
                 "description": "Optional. Specifies the Linux operating system settings on the virtual machine."
             }
         },
         "certificatesToBeInstalled": {
             "type": "array",
-            "defaultValue": [
-            ],
+            "defaultValue": [],
             "metadata": {
                 "description": "Optional. Specifies set of certificates that should be installed onto the virtual machine."
             }
@@ -158,8 +151,7 @@
         },
         "availabilitySetNames": {
             "type": "array",
-            "defaultValue": [
-            ],
+            "defaultValue": [],
             "metadata": {
                 "description": "Optional. Name(s) of the availability set(s). If no explicit names are provided, availability set name(s) will be generated based on the availabilitySetName, vmNumberOfInstances and maxNumberOfVmsPerAvSet parameters."
             }
@@ -229,7 +221,12 @@
         "availabilityZone": {
             "type": "int",
             "defaultValue": 0,
-            "allowedValues": [ 0, 1, 2, 3 ],
+            "allowedValues": [
+                0,
+                1,
+                2,
+                3
+            ],
             "metadata": {
                 "description": "Optional. If set to 1, 2 or 3, the availability zone for all VMs is hardcoded to that value. If zero, then the automatic algorithm will be used to give every VM in a different zone (up to three zones). Cannot be used in combination with availability set nor scale set."
             }
@@ -294,8 +291,7 @@
         },
         "microsoftAntiMalwareSettings": {
             "type": "object",
-            "defaultValue": {
-            },
+            "defaultValue": {},
             "metadata": {
                 "description": "Optional. Settings for Microsoft Windows Defender AV extension."
             }
@@ -445,8 +441,7 @@
         },
         "windowsScriptExtensionFileData": {
             "type": "array",
-            "defaultValue": [
-            ],
+            "defaultValue": [],
             "metadata": {
                 "description": "Optional. Array of objects that specifies URIs and the storageAccountId of the scripts that need to be downloaded and run by the Custom Script Extension on a Windows VM."
             }
@@ -544,8 +539,7 @@
         },
         "dscConfiguration": {
             "type": "object",
-            "defaultValue": {
-            },
+            "defaultValue": {},
             "metadata": {
                 "description": "Optional. The DSC configuration object"
             }
@@ -559,7 +553,7 @@
         },
         "bootDiagnosticStorageAccountUri": {
             "type": "string",
-            "defaultValue": ".blob.core.windows.net/",
+            "defaultValue": ".blob.core.usgovcloudapi.net/",
             "metadata": {
                 "description": "Optional. Storage account boot diagnostic base URI."
             }
@@ -616,8 +610,7 @@
             }
         },
         "roleAssignments": {
-            "defaultValue": [
-            ],
+            "defaultValue": [],
             "type": "array",
             "metadata": {
                 "description": "Optional. Array of role assignment objects that contain the 'roleDefinitionIdOrName' and 'principalId' to define RBAC role assignments on this resource. In the roleDefinitionIdOrName attribute, you can provide either the display name of the role definition, or its fully qualified ID in the following format: '/providers/Microsoft.Authorization/roleDefinitions/c2f4ef07-c644-48eb-af81-4b1b4947fb11'"
@@ -625,8 +618,7 @@
         },
         "tags": {
             "type": "object",
-            "defaultValue": {
-            },
+            "defaultValue": {},
             "metadata": {
                 "description": "Optional. Tags of the resource."
             }
@@ -737,8 +729,7 @@
                 "template": {
                     "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
                     "contentVersion": "1.0.0.0",
-                    "resources": [
-                    ]
+                    "resources": []
                 }
             }
         },
@@ -1277,8 +1268,7 @@
                             "apiVersion": "2020-06-01",
                             "type": "Microsoft.Resources/deployments",
                             "condition": "[not(empty(parameters('nicConfigurations')))]",
-                            "dependsOn": [
-                            ],
+                            "dependsOn": [],
                             "copy": {
                                 "name": "vmLoop",
                                 "count": "[length(parameters('vmNames'))]"
@@ -1787,8 +1777,7 @@
                                             "apiVersion": "2020-06-01",
                                             "type": "Microsoft.Resources/deployments",
                                             "condition": "[and(equals(length(parameters('nicConfigurations')),1), not(empty(parameters('nicConfigurations')[0].ipConfigurations)), contains(parameters('nicConfigurations')[0].ipConfigurations[copyIndex('vmNicPipConfigLoop')], 'enablePublicIP'), parameters('nicConfigurations')[0].ipConfigurations[copyIndex('vmNicPipConfigLoop')].enablePublicIP)]",
-                                            "dependsOn": [
-                                            ],
+                                            "dependsOn": [],
                                             "copy": {
                                                 "name": "vmNicPipConfigLoop",
                                                 "count": "[if(equals(length(parameters('nicConfigurations')),1), length(parameters('nicConfigurations')[0].ipConfigurations),0)]"
@@ -2039,8 +2028,7 @@
                                             "apiVersion": "2020-06-01",
                                             "type": "Microsoft.Resources/deployments",
                                             "condition": "[greater(length(parameters('nicConfigurations')),1)]",
-                                            "dependsOn": [
-                                            ],
+                                            "dependsOn": [],
                                             "copy": {
                                                 "name": "vmNicDeployInnerLoop",
                                                 "count": "[length(parameters('nicConfigurations'))]"
@@ -2149,8 +2137,7 @@
                                                             "apiVersion": "2020-06-01",
                                                             "type": "Microsoft.Resources/deployments",
                                                             "condition": "[and(not(empty(parameters('nicConfiguration').ipConfigurations)), contains(parameters('nicConfiguration').ipConfigurations[copyIndex('vmNicPipConfigLoop')], 'enablePublicIP'), parameters('nicConfiguration').ipConfigurations[copyIndex('vmNicPipConfigLoop')].enablePublicIP)]",
-                                                            "dependsOn": [
-                                                            ],
+                                                            "dependsOn": [],
                                                             "copy": {
                                                                 "name": "vmNicPipConfigLoop",
                                                                 "count": "[length(parameters('nicConfiguration').ipConfigurations)]"
@@ -2729,8 +2716,7 @@
                                                         "type": "NetworkWatcherAgentWindows",
                                                         "typeHandlerVersion": "1.4",
                                                         "autoUpgradeMinorVersion": true,
-                                                        "settings": {
-                                                        }
+                                                        "settings": {}
                                                     }
                                                 },
                                                 // VM NetworkWatcherAgentLinux extension
@@ -2749,8 +2735,7 @@
                                                         "type": "NetworkWatcherAgentLinux",
                                                         "typeHandlerVersion": "1.4",
                                                         "autoUpgradeMinorVersion": true,
-                                                        "settings": {
-                                                        }
+                                                        "settings": {}
                                                     }
                                                 },
                                                 // VM windowsDsc extension
@@ -2889,8 +2874,7 @@
                                                             "type": "Microsoft.Compute/virtualMachines/providers/roleAssignments",
                                                             "apiVersion": "2018-09-01-preview",
                                                             "name": "[concat(parameters('vmName'), '/Microsoft.Authorization/', guid(uniqueString(concat(parameters('vmName'), array(parameters('roleAssignment').principalIds)[copyIndex('innerRbacCopy')], parameters('roleAssignment').roleDefinitionIdOrName ) )))]",
-                                                            "dependsOn": [
-                                                            ],
+                                                            "dependsOn": [],
                                                             "copy": {
                                                                 "name": "innerRbacCopy",
                                                                 "count": "[length(parameters('roleAssignment').principalIds)]"
@@ -2945,8 +2929,7 @@
             }
         }
     ],
-    "functions": [
-    ],
+    "functions": [],
     "outputs": {
         "virtualMachinesResourceId": {
             "type": "array",
