@@ -373,7 +373,7 @@
         },
         "bootDiagnosticStorageAccountUri": {
             "type": "string",
-            "defaultValue": ".blob.core.windows.net/",
+            "defaultValue": ".blob.core.usgovcloudapi.net/",
             "metadata": {
                 "description": "Optional. Storage account boot diagnostic base URI."
             }
@@ -671,7 +671,7 @@
         "managedIdentityType": {
             "type": "string",
             "allowedValues": [
-                "SystemAssigned", 
+                "SystemAssigned",
                 "UserAssigned",
                 "None",
                 ""
@@ -686,8 +686,8 @@
             "defaultValue": {},
             "metadata": {
                 "description": "Optional. The list of user identities associated with the virtual machine scale set. The user identity dictionary key references will be ARM resource ids in the form: '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/{identityName}'."
-            } 
-        }        
+            }
+        }
     },
     "variables": {
         "linuxConfiguration": {
