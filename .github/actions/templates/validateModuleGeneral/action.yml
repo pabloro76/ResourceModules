@@ -23,8 +23,8 @@ runs:
     - name: Azure Login
       uses: Azure/login@v1
       with:
-        environment: 'AzureUSGovernment'
         creds: ${{ env.AZURE_CREDENTIALS }}
+        environment: 'AzureUSGovernment'
         enable-AzPSSession: true
 
     # [Module Pester Test] task(s)

@@ -21,12 +21,13 @@ runs:
         # Load used functions
         . ".github/actions/sharedScripts/Set-EnvironmentOnAgent.ps1"
         # Set agent up
-        Set-EnvironmentOnAgent    
-  
+        Set-EnvironmentOnAgent
+
     - name: Azure Login
       uses: Azure/login@v1
       with:
         creds: ${{ env.AZURE_CREDENTIALS }}
+        environment: 'AzureUSGovernment'
         enable-AzPSSession: true
 
     - name: "Remove module"
