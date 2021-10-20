@@ -30,11 +30,12 @@ runs:
         # Load used functions
         . ".github/actions/sharedScripts/Set-EnvironmentOnAgent.ps1"
         # Set agent up
-        Set-EnvironmentOnAgent    
-  
+        Set-EnvironmentOnAgent
+
     - name: Azure Login
       uses: Azure/login@v1
       with:
+        environment: 'AzureUSGovernment'
         creds: ${{ env.AZURE_CREDENTIALS }}
         enable-AzPSSession: true
 
