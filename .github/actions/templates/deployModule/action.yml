@@ -25,7 +25,7 @@ inputs:
     required: false
   removeDeployment:
     description: 'Set "true" to set module up for removal'
-    default: 'true' 
+    default: 'true'
     required: false
 
 runs:
@@ -37,11 +37,12 @@ runs:
         # Load used functions
         . ".github/actions/sharedScripts/Set-EnvironmentOnAgent.ps1"
         # Set agent up
-        Set-EnvironmentOnAgent    
-  
+        Set-EnvironmentOnAgent
+
     - name: Azure Login
       uses: Azure/login@v1
       with:
+        environment: 'AzureUSGovernment'
         creds: ${{ env.AZURE_CREDENTIALS }}
         enable-AzPSSession: true
 
