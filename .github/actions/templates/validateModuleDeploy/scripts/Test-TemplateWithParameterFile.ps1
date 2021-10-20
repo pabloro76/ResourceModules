@@ -16,7 +16,7 @@ Mandatory. Path to the template file from root.
 Mandatory. Path to the parameter file from root.
 
 .PARAMETER location
-Mandatory. Location to test in. E.g. usgovvirginia
+Mandatory. Location to test in. E.g. usgovarizona
 
 .PARAMETER resourceGroupName
 Optional. Name of the resource group to deploy into. Mandatory if deploying into a resource group (resource group level)
@@ -28,14 +28,14 @@ Optional. Id of the subscription to deploy into. Mandatory if deploying into a s
 Optional. Name of the management group to deploy into. Mandatory if deploying into a management group (management group level)
 
 .EXAMPLE
-Test-TemplateWithParameterFile templateFilePath 'ARM/KeyVault/deploy.json' -parameterFilePath 'ARM/KeyVault/Parameters/parameters.json' -location 'usgovvirginia' -resourceGroupName 'aLegendaryRg'
+Test-TemplateWithParameterFile templateFilePath 'ARM/KeyVault/deploy.json' -parameterFilePath 'ARM/KeyVault/Parameters/parameters.json' -location 'usgovarizona' -resourceGroupName 'aLegendaryRg'
 
-Test the deploy.json of the KeyVault module with the parameter file 'parameters.json' using the resource group 'aLegendaryRg' in location 'usgovvirginia'
+Test the deploy.json of the KeyVault module with the parameter file 'parameters.json' using the resource group 'aLegendaryRg' in location 'usgovarizona'
 
 .EXAMPLE
-Test-TemplateWithParameterFile templateFilePath 'ARM/ResourceGroup/deploy.json' -parameterFilePath 'ARM/ResourceGroup/Parameters/parameters.json' -location 'usgovvirginia'
+Test-TemplateWithParameterFile templateFilePath 'ARM/ResourceGroup/deploy.json' -parameterFilePath 'ARM/ResourceGroup/Parameters/parameters.json' -location 'usgovarizona'
 
-Test the deploy.json of the ResourceGroup module with the parameter file 'parameters.json' in location 'usgovvirginia'
+Test the deploy.json of the ResourceGroup module with the parameter file 'parameters.json' in location 'usgovarizona'
 #>
 function Test-TemplateWithParameterFile {
 

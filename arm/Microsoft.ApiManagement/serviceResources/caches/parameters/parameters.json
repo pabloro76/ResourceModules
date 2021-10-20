@@ -6,13 +6,13 @@
       "value": "adp-sxx-az-am-weu-x-001"
     },
     "cacheName": {
-      "value": "usgovvirginia"
+      "value": "usgovarizona"
     },
     "connectionString": {
       "value": "connectionstringtest"
     },
     "useFromLocation": {
-      "value": "usgovvirginia"
+      "value": "usgovarizona"
     },
     "cuaId": {
       "value": "00000-0-000000"

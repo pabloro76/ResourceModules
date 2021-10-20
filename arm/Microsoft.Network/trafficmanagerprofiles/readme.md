@@ -67,7 +67,7 @@ This module deploys Traffic Manager, with resource lock.
                     "target": "my-pip-001.eastus.cloudapp.azure.com",
                     "weight": 1,
                     "priority": 1,
-                    "endpointLocation": "usgovvirginia"
+                    "endpointLocation": "usgovarizona"
                 }
             }
         ]
