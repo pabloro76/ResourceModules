@@ -14,7 +14,7 @@
                         {
                             "roleDefinitionIdOrName": "Reader",
                             "principalIds": [
-                                "909e8353-bf5c-4021-b8a8-467701ef162d"
+                                "8dbabb2d-eb07-4947-8f5b-ef74c7e54a93"
                             ]
                         }
                     ]
@@ -29,7 +29,7 @@
                         {
                             "roleDefinitionIdOrName": "Reader",
                             "principalIds": [
-                                "909e8353-bf5c-4021-b8a8-467701ef162d"
+                                "8dbabb2d-eb07-4947-8f5b-ef74c7e54a93"
                             ]
                         }
                     ]
@@ -48,7 +48,7 @@
                         {
                             "roleDefinitionIdOrName": "Reader",
                             "principalIds": [
-                                "909e8353-bf5c-4021-b8a8-467701ef162d"
+                                "8dbabb2d-eb07-4947-8f5b-ef74c7e54a93"
                             ]
                         }
                     ]
@@ -60,7 +60,7 @@
                         {
                             "roleDefinitionIdOrName": "Reader",
                             "principalIds": [
-                                "909e8353-bf5c-4021-b8a8-467701ef162d"
+                                "8dbabb2d-eb07-4947-8f5b-ef74c7e54a93"
                             ]
                         }
                     ]
@@ -82,7 +82,7 @@
                         {
                             "roleDefinitionIdOrName": "Reader",
                             "principalIds": [
-                                "909e8353-bf5c-4021-b8a8-467701ef162d"
+                                "8dbabb2d-eb07-4947-8f5b-ef74c7e54a93"
                             ]
                         }
                     ]
@@ -94,7 +94,7 @@
                         {
                             "roleDefinitionIdOrName": "Reader",
                             "principalIds": [
-                                "909e8353-bf5c-4021-b8a8-467701ef162d"
+                                "8dbabb2d-eb07-4947-8f5b-ef74c7e54a93"
                             ]
                         }
                     ]
@@ -106,7 +106,7 @@
                 {
                     "roleDefinitionIdOrName": "Reader",
                     "principalIds": [
-                        "909e8353-bf5c-4021-b8a8-467701ef162d"
+                        "8dbabb2d-eb07-4947-8f5b-ef74c7e54a93"
                     ]
                 }
             ]
