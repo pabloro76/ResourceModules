@@ -3,7 +3,7 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "analysisServicesName": {
-            "value": "sxxazasweux001"
+            "value": "szzazasweux001"
         },
         "skuName": {
             "value": "D1"
@@ -13,7 +13,7 @@
                 {
                     "roleDefinitionIdOrName": "Reader",
                     "principalIds": [
-                        "5545f7a0-51f4-46af-b3b4-baecf5176a56"
+                        "8dbabb2d-eb07-4947-8f5b-ef74c7e54a93"
                     ]
                 }
             ]
